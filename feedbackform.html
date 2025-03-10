@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+            
+            if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+                alert("Please properly fill all the fields.");
+                return false;
+            }
+            
+            alert("Form submitted successfully.");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

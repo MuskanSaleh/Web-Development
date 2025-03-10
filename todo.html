@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple To-Do List</title>
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("taskInput").value;
+            if (taskInput.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+            
+            let taskList = document.getElementById("taskList");
+            let li = document.createElement("li");
+            li.innerText = taskInput;
+            
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+            deleteBtn.onclick = function() {
+                taskList.removeChild(li);
+            };
+            
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+            document.getElementById("taskInput").value = "";
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+</body>
+</html>
